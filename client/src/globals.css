@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 0 0% 85%;
+    
+    --card: 222 47% 9%;
+    --card-foreground: 0 0% 85%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 85%;
+    
+    --primary: 272 51% 47%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 224 71% 4%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 223 47% 15%;
+    --muted-foreground: 215 20% 65%;
+    
+    --accent: 272 51% 47%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 224 71% 4%;
+    --input: 224 71% 4%;
+    --ring: 272 51% 47%;
+    
+    --radius: 0.5rem;
+
+    /* Custom Colors */
+    --space-dark: 222 47% 11%;
+    --space-darker: 222 71% 6%;
+    --space-purple: 272 51% 47%;
+    --space-teal: 180 100% 55%;
+    --space-gray: 240 10% 14%;
+    --space-light: 0 0% 85%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply bg-[#0B1026] text-[#D9D9D9];
+    background-image: 
+      radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 5px),
+      radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+      radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  button, .button-text {
+    font-family: 'Rajdhani', sans-serif;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .glow {
+    text-shadow: 0 0 10px #1BFFFF, 0 0 20px #1BFFFF;
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 10px rgba(27, 255, 255, 0.3), 0 0 20px rgba(27, 255, 255, 0.2);
+  }
+  
+  .space-gradient {
+    background: linear-gradient(135deg, #0B1026 0%, #1E1E24 100%);
+  }
+
+  /* Animation for countdown timer */
+  .countdown-ring {
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    animation: countdown 60s linear infinite;
+  }
+  
+  @keyframes countdown {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Hover effects for cards */
+  .planet-card:hover .planet-img {
+    transform: scale(1.05);
+  }
+  
+  .planet-card .planet-img {
+    transition: transform 0.5s ease;
+  }
+  
+  /* Float animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0B1026;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #6C3CB4;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1BFFFF;
+  }
+}
